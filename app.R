@@ -45,6 +45,7 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 
 # To Do
+# Feel free to ignore these. I just put these in as possible directions to take the app.
 # [ ] Column names are messy.
 # [ ] Add functionality so the end user can get a phone number and an email
 # [ ] Add download functionality ??
