@@ -1,3 +1,4 @@
 *.html
 /sensitive
+.Rhistory
 .Rproj.user
