@@ -48,3 +48,4 @@ shinyApp(ui, server)
 # [ ] Column names are messy.
 # [ ] Add functionality so the end user can get a phone number and an email
 # [ ] Add download functionality ??
+# [ ] Style the app with custom CSS, maybe add DSU branding ??
