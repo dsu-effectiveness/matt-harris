@@ -16,4 +16,4 @@ adjunct_faculty_sql <- dbGetQuery(con, read_file(here::here('sql', 'adjunct_facu
 # csv file to explore the data
 write_csv(adjunct_faculty_sql, here::here('data', 'adjunct_faculty_list.csv'))
 # RData loads into the app easier
-save(adjuct_faculty_sql, file = here::here('data', 'adjuct_faculty.RData'))
+save(adjunct_faculty_sql, file = here::here('data', 'adjunct_faculty.RData'))
