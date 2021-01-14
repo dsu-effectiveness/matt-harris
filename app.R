@@ -14,7 +14,7 @@ load(here::here('data', 'adjunct_faculty.RData'))
 
 # the full data set has lots of repeated rows because of email and phone numbers
 # here we get rid of all that and just display the courses
-adjunct_course <- adjuct_faculty_sql %>% 
+adjunct_course <- adjunct_faculty_sql %>% 
   select(spriden_first_name, spriden_last_name, stvterm_desc, 
          ssbsect_subj_code, ssbsect_crse_numb, days,
          ssrmeet_begin_time) %>% 
