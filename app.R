@@ -28,17 +28,37 @@ ui <- fluidPage(
     h4("Here is an important thing we want to say."),
     p("Here is some text that we can use to explain what this app does.")
     ),
-  datatable(adjunct_course, 
-            filter = 'top', 
-            options = list(
-              pageLength = 10, autoWidth = TRUE
-            ),
-            rownames = FALSE
-  )
+  selectInput(
+    'name',
+    label = 'Pick name',
+    choices = adjunct_faculty_sql$spriden_first_name %>% unique(),
+    multiple = TRUE
+  ),
+  selectInput(
+    'term',
+    label = 'Pick term',
+    choices = adjunct_faculty_sql$stvterm_acyr_code %>% unique(),
+    multiple = TRUE
+  ),
+  DT::dataTableOutput('table')
   
 )
 
 server <- function(input, output, session) {
+  
+  output$table <- DT::renderDataTable(
+    
+    DT::datatable(
+      
+      adjunct_faculty_sql %>% 
+        filter(spriden_first_name == input$name) %>% 
+        filter(stvterm_acyr_code == input$term) %>% 
+        select(spriden_first_name, spriden_last_name, stvterm_acyr_code,
+               ssbsect_subj_code, ssbsect_crse_numb) %>% 
+        unique()
+    )
+    
+  )
   
 }
 
